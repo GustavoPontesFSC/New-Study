@@ -22,13 +22,14 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
 
     os.remove('housing.tgz')
 
+    
 class loud_housing():
     def __init__(self, housing = HOUSING_PATH):
         self.housing = housing.joinpath('housing.csv')
-        self.csv_path = pd.read_csv(self.housing, sep=',', header=None)
+        self.csv_path = pd.read_csv(self.housing, sep=',', header=None) # data frame object
 
     def array(self,):
-        return pd.read_csv(self.housing, sep=',', header=None, skiprows=1).to_numpy()
+        return pd.read_csv(self.housing, sep=',', header=None, skiprows=1).to_numpy() # array
 
 
 
